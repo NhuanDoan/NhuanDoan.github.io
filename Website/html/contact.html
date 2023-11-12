@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ - Trà Sữa King tea</title>
+    <link rel="stylesheet" href="../css/ContactStyle.css">
+    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../fontawesome-free-6.4.2-web/css/all.min.css">
+    <script src="../bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header_contact">
+            <h1 class="text-white">Liên hệ với trà sữa Tea Milk</h1>
+            <p class="text-white">Please fill the form to submit your feedback to Tea Milk</p>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <div class="card">
+                    <img src="../img/Contact/Contact1.jpg" alt="Cửa hàng" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Thông tin liên hệ</h5>
+                        <p class="card-text">a
+                            Email: KigMilkTea123@gmail.com <br>
+                            Số điện thoại: 0909090909 <br>
+                            Địa chỉ: 172/19 Nguyễn Trãi, Quận 10, Tp.HCM
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-12 bg-light">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title" style="font-size: 30px;"><strong>Danh sách cửa hàng trên toàn quốc</strong></h3>
+
+                        <p class="card-text">
+                            <ul class="list-unstyled">
+                                <li><strong style="font-size: 20px;">Cửa hàng Hoàng Văn Thụ:</strong> 192/1 Hoàng Văn Thụ, Quận 4, Tp.HCM</li>
+                                <li><strong style="font-size: 20px;">Cửa hàng Nguyễn Văn Bảo:</strong> 142/2 Nguyễn Văn Bảo, Quận Gò Vấp, Tp.HCM</li>
+                                <li><strong style="font-size: 20px;">Cửa hàng Trần Phú:</strong> 92/21 Trần Phú, Quận 5, Tp.HCM</li>
+                                <li><strong style="font-size: 20px;">Cửa hàng Nguyễn Đình Chiểu:</strong> 23 Nguyễn Đình Chiểu, Quận Bình Thạnh, Tp.HCM</li>
+                                <li><strong style="font-size: 20px;">Cửa hàng Nam Kỳ Khởi Nghĩa:</strong> 19 Nam Kỳ Khởi Nghĩa, Quận 1, Tp.HCM</li>
+                                <li><strong style="font-size: 20px;">Cửa hàng Hoàng Hoa Thám:</strong> 55 Hoàng Hoa Thám, Quận 4, Tp.HCM</li>
+                                <li><strong style="font-size: 20px;">Cửa hàng Lê Lợi:</strong> 12/5 Lê Lợi, Quận Tân Bình, Tp.HCM</li>
+                                <li><strong style="font-size: 20px;">Cửa hàng Lê Khôi :</strong> 150 Lê Khôi, Quận Bình Thạnh, Tp.HCM</li>
+                                <li><strong style="font-size: 20px;">Cửa hàng Hai Bà Trưng:</strong> 1180 Hai Bà Trưng , Quận Gò Vấp, Tp.HCM</li>
+                                <li><strong style="font-size: 20px;">Cửa hàng Lê Lai:</strong> 128 Lê Lai, Quận Tân Bình, Tp.HCM</li>
+                              
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="container_contact mx-auto bg-light">
+                <h3>Nếu bạn có bất kỳ câu hỏi hoặc ý kiến gì, vui lòng điền vào biểu mẫu dưới đây và gửi cho chúng tôi.</h3>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Họ và tên:</label>
+                        <input type="text" class="form-control" id="name" name="name" >
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" >
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tin nhắn:</label>
+                        <textarea class="form-control" id="message" name="message" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Gửi</button>
+                </form>
+            </div>
+                <footer class="footer">
+                    <div class="conten_ft bg-secondary">
+                        <p class="text-white text-center">&copy; 2023 Trà Sữa King Tea. All rights reserved.</p>
+                    </div>
+                </footer>
+    </div>
+<script>
+    $(document).ready(function () {
+        $('form').submit(function (event) {
+    
+            $('.error-message').remove();
+
+            var name = $('#name').val();
+            var email = $('#email').val();
+            var emailRegex = /^\S+@\S+\.\S+$/;
+
+            if (name.trim() === "") {
+                $('<span class="error-message">Họ và tên không được để trống.</span>').insertAfter('#name');
+                event.preventDefault();
+                return false;
+            }
+
+            if (!email.match(emailRegex)) {
+                $('<span class="error-message">Email không hợp lệ.</span>').insertAfter('#email');
+                event.preventDefault();
+                return false;
+            }
+            return true;
+        });
+    });
+</script>
+
+</body>
+</html>
