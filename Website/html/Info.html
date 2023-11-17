@@ -287,10 +287,10 @@
     </div>
 
     <script>
+        const name = localStorage.getItem("NameTT");
         function extractFirstName() {
-            var fullName = document.getElementById("fullName").value;
-            var nameArray = fullName.split(' ');
-            var firstName = nameArray[0];
+            var nameArray = name.split(' ');
+            var firstName = nameArray[nameArray.length - 1];
         }
         const TTDN = localStorage.getItem("trangthaiDN");
         if (TTDN == "True") {

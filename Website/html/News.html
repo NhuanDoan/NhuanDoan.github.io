@@ -363,11 +363,11 @@
         </div>
     </div>
     <script>
-        function extractFirstName() {
-            var fullName = document.getElementById("fullName").value;
-            var nameArray = fullName.split(' ');
-            var firstName = nameArray[0];
-        }
+        const name = localStorage.getItem("NameTT");
+
+        var nameArray = name.split(' ');
+        var firstName = nameArray[nameArray.length - 1];
+
         const TTDN = localStorage.getItem("trangthaiDN");
         if (TTDN == "True") {
             document.getElementById("Dangnhap").textContent = firstName;
@@ -375,7 +375,7 @@
             taikhoan.href = "thongtin.html";
 
         }
-    </script
+    </script>
 </body>
 
 </html>
