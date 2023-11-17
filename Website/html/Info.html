@@ -288,10 +288,8 @@
 
     <script>
         const name = localStorage.getItem("NameTT");
-        function extractFirstName() {
-            var nameArray = name.split(' ');
-            var firstName = nameArray[nameArray.length - 1];
-        }
+        var nameArray = name.split(' ');
+        var firstName = nameArray[nameArray.length - 1];
         const TTDN = localStorage.getItem("trangthaiDN");
         if (TTDN == "True") {
             document.getElementById("Dangnhap").textContent = firstName;
