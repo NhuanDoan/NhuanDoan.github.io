@@ -103,18 +103,18 @@
         <span>@ 2023 Classy Login Form. All right reserved | Design By PhuHoang</span>
     </div>
     <script>
-        function extractFirstName() {
-            var fullName = document.getElementById("fullName").value;
-            var nameArray = fullName.split(' ');
-            var firstName = nameArray[0];
-        }
+
         const TTDN = localStorage.getItem("trangthaiDN");
         if (TTDN == "True") {
-            document.getElementById("Dangnhap").textContent = firstName;
-            const taikhoan = document.querySelector("#taikhoan");
-            taikhoan.href = "thongtin.html";
+            const name = localStorage.getItem("NameTT");
+        const phone =  localStorage.getItem("PhoneTT");
+
+        document.getElementById("username").value = name;
+        document.getElementById("telephone").value = phone;
 
         }
+
+        
     </script>
 
 </body>
