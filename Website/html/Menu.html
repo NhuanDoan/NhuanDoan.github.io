@@ -458,9 +458,14 @@
         </div>
     </div>
     <script>
+        function extractFirstName() {
+            var fullName = document.getElementById("fullName").value;
+            var nameArray = fullName.split(' ');
+            var firstName = nameArray[0];
+        }
         const TTDN = localStorage.getItem("trangthaiDN");
         if (TTDN == "True") {
-            document.getElementById("Dangnhap").textContent = "Nhuận";
+            document.getElementById("Dangnhap").textContent = firstName;
             const taikhoan = document.querySelector("#taikhoan");
             taikhoan.href = "thongtin.html";
 
