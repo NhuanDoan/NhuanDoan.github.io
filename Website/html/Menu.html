@@ -7,20 +7,20 @@
     <title>Menu</title>
     <link rel="shortcut icon" type="image/png" href="../img/Logo/Logo1.png" />
     <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="../css/Menu.css">
     <link rel="stylesheet" href="../fontawesome-free-6.4.2-web/css/all.min.css">
     <script src="../bootstrap-5.2.3-dist/js/bootstrap.bundle.js"></script>
 </head>
 
 <body>
-    <div class="header">
+    <div class="header position-sticky sticky-top">
         <div class="container">
-            <div class="row py-4">
-                <div class="col-md-2 col-12 px-0">
+            <div class="row">
+                <div class="col-md-2 col-sm-4 col-4 px-0">
                     <img src="../img/Logo/Logo_header.png" class="img-fluid" alt="Logo">
                 </div>
-                <div class="col-md-4 col-12 py-3">
+                <div class="col-md-4 col-sm-8 col-8 py-3">
                     <div class="input-group mb-3 ">
                         <input type="text" class="form-control" placeholder="Từ khóa tìm kiếm"
                             aria-label="Từ khóa tìm kiếm" aria-describedby="basic-addon2">
@@ -28,7 +28,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="col-md-4 col-8 py-3 px-0">
+                <div class="col-md-4 col-sm-8 col-8 py-3 px-0">
                     <div class="row">
                         <div class="col">
                             <div class="row">
@@ -47,18 +47,20 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="fs-3 text-info">
-                                        <i class="fa-regular fa-circle-user"></i>
+                                        <a href="dangnhap.html" id="taikhoan">
+                                            <i class="fa-regular fa-circle-user"></i>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="col-md-8 px-0">
                                     Xin chào!<br>
-                                    <strong class="text-info">Đăng nhập</strong>
+                                    <strong class="text-info" id="Dangnhap">Đăng nhập</strong>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-2 col-6 py-3">
+                <div class="col-md-2 col-sm-4 col-4 py-3">
                     <div class="row">
                         <div class="col-md-6 col-6">
                             <a href="#" class=" position-relative">
@@ -88,66 +90,65 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="nav position-sticky sticky-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 px-0">
-                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                        <div class="container-fluid px-0">
-                            <a class="navbar-brand d-none" href="#">Navbar</a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                                    <li class="nav-item px-4 py-2 ">
-                                        <a class="nav-link" aria-current="page" href="index.html">Trang chủ</a>
-                                    </li>
-                                    <li class="nav-item px-4 py-2" aria-current="page" href="#">
-                                        <a class="nav-link" href="#">Giới thiệu</a>
-                                    </li>
-                                    <li class="nav-item dropdown btn-group px-4 py-2 active">
-                                        <a class="nav-link " href="Menu.html" role="button">
-                                            Menu
-                                        </a>
-                                        <a class="nav-link dropdown-toggle" href="#" role="button"
-                                            data-bs-toggle="dropdown"></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#Thucuong">Thức uống</a></li>
-                                            <li><a class="dropdown-item" href="#doannhe">Bánh ngọt</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item px-4 py-2" aria-current="page" href="#">
-                                        <a class="nav-link" href="News.html">Tin tức</a>
-                                    </li>
-                                    <li class="nav-item px-4 py-2" aria-current="page" href="#">
-                                        <a class="nav-link" href="#">Liên hệ</a>
-                                    </li>
-                                </ul>
-                                <div class="socnet">
-                                    <li class="nav-item px-4 py-2">
-                                        <span class="fs-2 px-1">
-                                            <i class="fa-brands fa-twitter" style="color: #1f93d6;"></i>
-                                        </span>
-                                        <span class="fs-2  px-1">
-                                            <i class="fa-brands fa-facebook" style="color: #1f93d6;;"></i>
-                                        </span>
-                                        <span class="fs-2  px-1 ">
-                                            <i class="fa-brands fa-telegram" style="color: #3c7cec;"></i>
-                                        </span>
-                                    </li>
+        <div class="nav ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 px-0">
+                        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                            <div class="container-fluid px-0">
+                                <a class="navbar-brand d-none" href="#">Navbar</a>
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                                        <li class="nav-item px-4 py-2 ">
+                                            <a class="nav-link" aria-current="page" href="index.html">Trang chủ</a>
+                                        </li>
+                                        <li class="nav-item px-4 py-2" aria-current="page" href="#">
+                                            <a class="nav-link" href="Info.html">Giới thiệu</a>
+                                        </li>
+                                        <li class="nav-item dropdown btn-group px-4 py-2 active">
+                                            <a class="nav-link " href="Menu.html" role="button">
+                                                Menu
+                                            </a>
+                                            <a class="nav-link dropdown-toggle" href="#" role="button"
+                                                data-bs-toggle="dropdown"></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#Thucuong">Thức uống</a></li>
+                                                <li><a class="dropdown-item" href="#doannhe">Bánh ngọt</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item px-4 py-2" aria-current="page" href="#">
+                                            <a class="nav-link" href="News.html">Tin tức</a>
+                                        </li>
+                                        <li class="nav-item px-4 py-2" aria-current="page" href="#">
+                                            <a class="nav-link" href="contact.html">Liên hệ</a>
+                                        </li>
+                                    </ul>
+                                    <div class="socnet">
+                                        <li class="nav-item px-4 py-2">
+                                            <span class="fs-2 px-1">
+                                                <i class="fa-brands fa-twitter" style="color: #1f93d6;"></i>
+                                            </span>
+                                            <span class="fs-2  px-1">
+                                                <i class="fa-brands fa-facebook" style="color: #1f93d6;;"></i>
+                                            </span>
+                                            <span class="fs-2  px-1 ">
+                                                <i class="fa-brands fa-telegram" style="color: #3c7cec;"></i>
+                                            </span>
+                                        </li>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </nav>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-   
     <div class="content">
         <div class="container">
             <div class="content-product1" id="Thucuong">
@@ -157,7 +158,7 @@
                 </div>
                 <div class="product-list mb-3">
                     <div class="product-title">
-                        <div class="row" >
+                        <div class="row">
                             <div class="col-md-12">
                                 <p class="bg-success p-2 text-white bg-opacity-75 h1">Trà sữa</p>
                             </div>
@@ -169,43 +170,43 @@
                             <div class="col-md-4 col-6 mb-3 card">
                                 <img src="../img/Menu/Trasua/Trà Sữa Hoàng Kim.jpg" alt="Trà sữa hoàng kim"
                                     class="img-thumbnail my-1">
-                                <p class="h4">Trà Sữa Hoàng Kim</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <p class="h5">Trà Sữa Hoàng Kim</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
                                 <img src="../img/Menu/Trasua/Trà Sữa Chocolate.jpg" alt="Trà Sữa Chocolate"
                                     class="img-thumbnail my-1">
-                                <p class="h4">Trà Sữa Chocolate</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <p class="h5">Trà Sữa Chocolate</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
                                 <img src="../img/Menu/Trasua/Trà Sữa Oolong 3J.jpg" alt="Trà Sữa Oolong 3J"
                                     class="img-thumbnail my-1">
-                                <p class="h4">Trà Sữa Oolong 3J</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <p class="h5">Trà Sữa Oolong 3J</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
                                 <img src="../img/Menu/Trasua/Trà Sữa Hokkaido.jpg" alt="Trà Sữa Hokkaido"
                                     class="img-thumbnail my-1">
-                                <p class="h4">Trà Sữa Hokkaido</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <p class="h5">Trà Sữa Hokkaido</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
                                 <img src="../img/Menu/Trasua/Trà Sữa Sương Sáo.jpg" alt="Trà Sữa Sương Sáo"
                                     class="img-thumbnail my-1">
-                                <p class="h4">Trà Sữa Sương Sáo</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <p class="h5">Trà Sữa Sương Sáo</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
                                 <img src="../img/Menu/Trasua/Trà Sữa Trân Châu Hoàng Kim.jpg"
                                     alt="Trà Sữa Trân Châu Hoàng Kim" class="img-thumbnail my-1">
-                                <p class="h4">Trà Sữa Trân Châu Hoàng Kim</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <p class="h5">Trà Sữa Trân Châu Hoàng Kim</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                         </div>
@@ -228,45 +229,44 @@
                     <div class="product-list-s py-3">
                         <div class="row">
                             <div class="col-md-4 col-6 mb-3 card">
-                                <img src="../img/Menu/TraTraCay/Chanh Ai-Yu và Trân Châu Trắng.jpg" alt="Chanh Ai-Yu và Trân Châu Trắng"
-                                    class="img-thumbnail my-1">
-                                <p class="h4">Chanh Ai-Yu và Trân Châu Trắng</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <img src="../img/Menu/TraTraCay/Chanh Ai-Yu và Trân Châu Trắng.jpg"
+                                    alt="Chanh Ai-Yu và Trân Châu Trắng" class="img-thumbnail my-1">
+                                <p class="h5">Chanh Ai-Yu và Trân Châu Trắng</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
                                 <img src="../img/Menu/TraTraCay/Trà Alisan Trái Cây.jpg" alt="Trà Alisan Trái Cây"
                                     class="img-thumbnail my-1">
-                                <p class="h4">Trà Alisan Trái Cây</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <p class="h5">Trà Alisan Trái Cây</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
                                 <img src="../img/Menu/TraTraCay/Trà Alisan Vải.jpg" alt="Trà Alisan Vải"
                                     class="img-thumbnail my-1">
-                                <p class="h4">Trà Alisan Vải</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <p class="h5">Trà Alisan Vải</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
                                 <img src="../img/Menu/TraTraCay/Trà Oolong Vải.jpg" alt="Trà Oolong Vải"
                                     class="img-thumbnail my-1">
-                                <p class="h4">Trà Oolong Vải</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <p class="h5">Trà Oolong Vải</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
                                 <img src="../img/Menu/TraTraCay/Trà Xanh Đào.jpg" alt="Trà Xanh Đào"
                                     class="img-thumbnail my-1">
-                                <p class="h4">Trà Xanh Đào</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <p class="h5">Trà Xanh Đào</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
-                                <img src="../img/Menu/TraTraCay/Đen Đào.jpg"
-                                    alt="Đen Đào" class="img-thumbnail my-1">
-                                <p class="h4">Đen Đào</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <img src="../img/Menu/TraTraCay/Đen Đào.jpg" alt="Đen Đào" class="img-thumbnail my-1">
+                                <p class="h5">Đen Đào</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                         </div>
@@ -291,43 +291,43 @@
                             <div class="col-md-4 col-6 mb-3 card">
                                 <img src="../img/Menu/DaXay/Khoai Môn Đá Xay.jpg" alt="Khoai Môn Đá Xay"
                                     class="img-thumbnail my-1">
-                                <p class="h4">Khoai Môn Đá Xay</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <p class="h5">Khoai Môn Đá Xay</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
                                 <img src="../img/Menu/DaXay/Matcha Đá Xay.jpg" alt="Matcha Đá Xay"
                                     class="img-thumbnail my-1">
-                                <p class="h4">Matcha Đá Xay</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <p class="h5">Matcha Đá Xay</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
                                 <img src="../img/Menu/DaXay/Mint Choco Smoothie.jpg" alt="Mint Choco Smoothie"
                                     class="img-thumbnail my-1">
-                                <p class="h4">Mint Choco Smoothie</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <p class="h5">Mint Choco Smoothie</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
                                 <img src="../img/Menu/DaXay/Đào Hồng Đá Tuyết.jpg" alt="Đào Hồng Đá Tuyết"
                                     class="img-thumbnail my-1">
-                                <p class="h4">Đào Hồng Đá Tuyết</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <p class="h5">Đào Hồng Đá Tuyết</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
                                 <img src="../img/Menu/DaXay/Yakult Đào Đá Xay.jpg" alt="Yakult Đào Đá Xay"
                                     class="img-thumbnail my-1">
-                                <p class="h4">Yakult Đào Đá Xay</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <p class="h5">Yakult Đào Đá Xay</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
-                                <img src="../img/Menu/DaXay/Strawberry Oreo Smoothie.jpg"
-                                    alt="Strawberry Oreo Smoothie" class="img-thumbnail my-1">
-                                <p class="h4">Strawberry Oreo Smoothie</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <img src="../img/Menu/DaXay/Strawberry Oreo Smoothie.jpg" alt="Strawberry Oreo Smoothie"
+                                    class="img-thumbnail my-1">
+                                <p class="h5">Strawberry Oreo Smoothie</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                         </div>
@@ -350,45 +350,45 @@
                     <div class="product-list-s py-3">
                         <div class="row">
                             <div class="col-md-4 col-6 mb-3 card">
-                                <img src="../img/Menu/ThucUongTheoMua/Cotton Candy Milk Tea.jpg" alt="Cotton Candy Milk Tea"
-                                    class="img-thumbnail my-1">
-                                <p class="h4">Cotton Candy Milk Tea</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <img src="../img/Menu/ThucUongTheoMua/Cotton Candy Milk Tea.jpg"
+                                    alt="Cotton Candy Milk Tea" class="img-thumbnail my-1">
+                                <p class="h5">Cotton Candy Milk Tea</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
                                 <img src="../img/Menu/ThucUongTheoMua/Milo Kem Chanh.jpg" alt="Milo Kem Chanh"
                                     class="img-thumbnail my-1">
-                                <p class="h4">Milo Kem Chanh</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <p class="h5">Milo Kem Chanh</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
                                 <img src="../img/Menu/ThucUongTheoMua/Rainbow Crush.jpg" alt="Rainbow Crush"
                                     class="img-thumbnail my-1">
-                                <p class="h4">Rainbow Crush</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <p class="h5">Rainbow Crush</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
                                 <img src="../img/Menu/ThucUongTheoMua/Sunrise Milk Tea.jpg" alt="Sunrise Milk Tea"
                                     class="img-thumbnail my-1">
-                                <p class="h4">Sunrise Milk Tea</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <p class="h5">Sunrise Milk Tea</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
-                                <img src="../img/Menu/ThucUongTheoMua/Trà Xanh Kem Sữa Milo.jpg" alt="Trà Xanh Kem Sữa Milo"
+                                <img src="../img/Menu/ThucUongTheoMua/Trà Xanh Kem Sữa Milo.jpg"
+                                    alt="Trà Xanh Kem Sữa Milo" class="img-thumbnail my-1">
+                                <p class="h5">Trà Xanh Kem Sữa Milo</p>
+                                <p class="h4">50.000 (VNĐ)</p>
+                                <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
+                            </div>
+                            <div class="col-md-4 col-6 mb-3 card">
+                                <img src="../img/Menu/ThucUongTheoMua/Trà Alisan Nhãn Sen.jpg" alt="Trà Alisan Nhãn Sen"
                                     class="img-thumbnail my-1">
-                                <p class="h4">Trà Xanh Kem Sữa Milo</p>
-                                <p class="h3">50.000 (VNĐ)</p>
-                                <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
-                            </div>
-                            <div class="col-md-4 col-6 mb-3 card">
-                                <img src="../img/Menu/ThucUongTheoMua/Trà Alisan Nhãn Sen.jpg"
-                                    alt="Trà Alisan Nhãn Sen" class="img-thumbnail my-1">
-                                <p class="h4">Trà Alisan Nhãn Sen</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <p class="h5">Trà Alisan Nhãn Sen</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                         </div>
@@ -411,45 +411,44 @@
                     <div class="product-list-s py-3">
                         <div class="row">
                             <div class="col-md-4 col-6 mb-3 card">
-                                <img src="../img/Menu/Banh/BanhMi.png" alt="Bánh mì"
-                                    class="img-thumbnail my-1">
-                                <p class="h4">Bánh mì TeaMilk</p>
-                                <p class="h3">30.000 (VNĐ)</p>
+                                <img src="../img/Menu/Banh/BanhMi.png" alt="Bánh mì" class="img-thumbnail my-1">
+                                <p class="h5">Bánh mì TeaMilk</p>
+                                <p class="h4">30.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
-                                <img src="../img/Menu/Banh/ButterChocolateCroissant.jpg" alt="Butter Chocolate Croissant"
-                                    class="img-thumbnail my-1">
-                                <p class="h4">Butter Chocolate Croissant</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <img src="../img/Menu/Banh/ButterChocolateCroissant.jpg"
+                                    alt="Butter Chocolate Croissant" class="img-thumbnail my-1">
+                                <p class="h5">Butter Chocolate Croissant</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
                                 <img src="../img/Menu/Banh/GreenTeaChocoCake.png" alt="Green Tea Choco Cake"
                                     class="img-thumbnail my-1">
-                                <p class="h4">GreenTea Choco Cake</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <p class="h5">GreenTea Choco Cake</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
                                 <img src="../img/Menu/Banh/PassionPannaCotta.png" alt="Passion Panna Cotta"
                                     class="img-thumbnail my-1">
-                                <p class="h4">Passion Panna Cotta</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <p class="h5">Passion Panna Cotta</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
                                 <img src="../img/Menu/Banh/PureButterCroissant.jpg" alt="Pure Butter Croissant"
                                     class="img-thumbnail my-1">
-                                <p class="h4">Pure Butter Croissant</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <p class="h5">Pure Butter Croissant</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="col-md-4 col-6 mb-3 card">
-                                <img src="../img/Menu/Banh/TiramisuMini.png"
-                                    alt="Tiramisu Mini" class="img-thumbnail my-1">
-                                <p class="h4">Tiramisu Mini</p>
-                                <p class="h3">50.000 (VNĐ)</p>
+                                <img src="../img/Menu/Banh/TiramisuMini.png" alt="Tiramisu Mini"
+                                    class="img-thumbnail my-1">
+                                <p class="h5">Tiramisu Mini</p>
+                                <p class="h4">50.000 (VNĐ)</p>
                                 <a href="#" class="btn btn-outline-success my-2">Thêm vào giỏ hàng</a>
                             </div>
                         </div>
@@ -458,6 +457,15 @@
             </div>
         </div>
     </div>
+    <script>
+        const TTDN = localStorage.getItem("trangthaiDN");
+        if (TTDN == "True") {
+            document.getElementById("Dangnhap").textContent = "Nhuận";
+            const taikhoan = document.querySelector("#taikhoan");
+            taikhoan.href = "thongtin.html";
+
+        }
+    </script>
 </body>
 
 </html>
