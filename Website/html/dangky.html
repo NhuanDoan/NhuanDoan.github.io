@@ -63,17 +63,14 @@
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
             const password = document.getElementById('password').value;
-            // Lưu thông tin đăng ký 
             const user = {
                 name: name,
                 phone: phone,
                 password: password
             };
-            // Kiểm tra nếu danh sách users đã tồn tại chưa
+
             let users = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [];
-            // Thêm người dùng mới vào danh sách
             users.push(user);
-            // Lưu danh sách người dùng 
             localStorage.setItem("NameTT", name);
             localStorage.setItem("PhoneTT", phone);
             localStorage.setItem('users', JSON.stringify(users));

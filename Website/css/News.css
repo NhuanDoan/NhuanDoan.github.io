@@ -160,7 +160,6 @@ nav {
 
 .news {
     color: brown;
-    font-size: 50px;
     font-style: italic;
 }
 
@@ -203,4 +202,14 @@ hr{
 .footer{
    margin-top: 10px;
     clear: both;
+}
+
+.header-contact {
+    background-image: url("../img/News/banner-tintuc-uudai.png");
+    height: 300px;
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
 }

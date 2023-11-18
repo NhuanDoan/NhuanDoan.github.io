@@ -29,10 +29,7 @@
 .btn-group {
     border-radius: 0px;
 }
-.container{
-    width: 90%;
-    
-}
+
 .banner{
     background-image: url(../img/Info/banner.jpg);
     background-size: contain;

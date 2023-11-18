@@ -32,8 +32,8 @@
                     <label for="loginPassword">Mật khẩu:</label>
                 </div>
                 <div class="form-check mt-3 mb-3">
-                    <input class="form-check-input" type="checkbox" id="rememberMe">    
-                    <label class="form-check-label" for="rememberMe">Hiện mật khẩu</label>
+                    <input class="form-check-input" type="checkbox" id="rememberMe" onclick="togglePasswordVisibility()">    
+                    <label class="form-check-label" for="rememberMe" >Hiện mật khẩu</label>
                 </div>
                 <div class="form-floating mt-3 mb-3">
                     <span><a style="text-decoration:none ;" href="#">Quên mật
@@ -61,9 +61,7 @@
             event.preventDefault();
             const loginPhone = document.getElementById('loginPhone').value;
             const loginPassword = document.getElementById('loginPassword').value;
-            // Lấy danh sách 
             const users = JSON.parse(localStorage.getItem('users')) || [];
-            // Kiểm tra xem thông tin đăng nhập có trong danh sách người dùng hay không
             const user = users.find(u => u.phone === loginPhone && u.password === loginPassword);
             if (user) {
                 var TTDN = "True";
@@ -79,6 +77,13 @@
             }
             
         }
+
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("loginPassword");
+            passwordInput.type = document.getElementById("rememberMe").checked ? "text" : "password";
+        }
+
+        
 
     </script>
 </body>

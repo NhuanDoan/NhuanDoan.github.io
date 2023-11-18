@@ -13,110 +13,107 @@
     <link rel="stylesheet" href="../fontawesome-free-6.4.2-web/css/all.min.css">
     <script src="../bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
     <script src="../bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
-    <script src="../bootstrap-5.2.3-dist/js/jquery.min.js"></script>
+    <script src="../js/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" href="../css/thanhtoan.css">
     <script>
-        //Họ tên không được để trống
-        //b. Ký tự đầu của mỗi từ là chữ hoa
-        function kiemtrahoten() {
-            let hoten = $("#txtHoTen").val().trim();
-            let reght = /^([A-Z][a-z]*)*([A-Z][a-z]*)$/;
-            if (hoten.length == 0) {
-                $("#errHoTen").html("Họ tên không được để trống");
-                $("#txtHoTen").focus();
-                return false;
-            } else if (reght.test(hoten)) {
-                $("#errHoTen").html("Họ tên không hợp lệ");
-                $("#txtHoTen").focus();
-                return false;
+        $(document).ready(function (e) {
+
+            function kiemtrahoten() {
+                let hoten = $("#txtHoTen").val().trim();
+                let reght = /^([A-Z][a-z]*)*([A-Z][a-z]*)$/;
+                if (hoten.length == 0) {
+                    $("#errHoTen").html("Họ tên không được để trống");
+                    $("#txtHoTen").focus();
+                    return false;
+                } else if (reght.test(hoten)) {
+                    $("#errHoTen").html("Họ tên không hợp lệ");
+                    $("#txtHoTen").focus();
+                    return false;
+                }
+                else {
+                    $('#errHoTen').html("");
+                    return true;
+                }
+
+
             }
-            else {
-                $('#errHoTen').html("");
-                return true;
-            }
 
-
-        }
-
-        $(document).ready(function () {
             $("#txtHoTen").blur(function () {
                 kiemtrahoten();
             });
-        });
 
-        //Kiểm tra số điện thoại
-        //a. Số điện thoại không được rỗng
-        //b. Số điện thoại có định dạng là 10 con số trong đó luôn bắt đầu 09,03,08 hoặc 07
-        function ktSDT() {
-            let SDT = $("#txtSĐT").val();
-            let btcq_SDT = /^(03|09|08|07)[0-9]{8}$/;
-            if (SDT == "" || SDT == null) {
-                $("#errSĐT").html("Số điện thoại không được rỗng");
-                return false;
-            }
-            else if (btcq_SDT.test(SDT)) {
-                $("#errSĐT").html("");
-                return true;
-            }
-            else {
-                $("#errSĐT").html("Số điện thoại không hợp lệ (bắt đầu 09,03,08 hoặc 07)");
-                return false;
+            function ktSDT() {
+                let SDT = $("#txtSĐT").val();
+                let btcq_SDT = /^(03|09|08|07)[0-9]{8}$/;
+                if (SDT == "" || SDT == null) {
+                    $("#errSĐT").html("Số điện thoại không được rỗng");
+                    return false;
+                }
+                else if (btcq_SDT.test(SDT)) {
+                    $("#errSĐT").html("");
+                    return true;
+                }
+                else {
+                    $("#errSĐT").html("Số điện thoại không hợp lệ (bắt đầu 09,03,08 hoặc 07)");
+                    return false;
 
-            }
-        }
-        //Kiểm tra địa chỉ:
-        //a. Địa chỉ không được để trống
-        function ktDiaChi() {
-            let dc = $("#txtDiaChi").val();
-
-            if (dc == "" || dc == null) {
-                $("#errDiaChi").html("Địa chỉ không được rỗng");
-                return false;
-            }
-            else {
-                $("#errDiaChi").html("");
-                return true;
+                }
             }
 
-        }
-        //kiểm tra email
-        function kiemtraemail() {
-            let email = $("#txtEmail").val().trim();
-            let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (email.length === 0) {
-                $("#errEmail").html("Email không được để trống");
-                $("#txtEmail").focus();
-                return false;
-            } else if (!regex.test(email)) {
-                $("#errEmail").html("Email không hợp lệ");
-                $("#txtEmail").focus();
-                return false;
-            } else {
-                $("#errEmail").html("");
-                return true;
-            }
-        }
+            $("#txtSĐT").blur(function (e) {
+                ktSDT();
+            });
 
-        $(document).ready(function () {
+            function ktDiaChi() {
+                let dc = $("#txtDiaChi").val();
+
+                if (dc == "" || dc == null) {
+                    $("#errDiaChi").html("Địa chỉ không được rỗng");
+                    return false;
+                }
+                else {
+                    $("#errDiaChi").html("");
+                    return true;
+                }
+
+            }
+
+            $("#txtDiaChi").blur(function (e) {
+                ktDiaChi();
+            });
+            function kiemtraemail() {
+                let email = $("#txtEmail").val().trim();
+                let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (email.length === 0) {
+                    $("#errEmail").html("Email không được để trống");
+                    $("#txtEmail").focus();
+                    return false;
+                } else if (!regex.test(email)) {
+                    $("#errEmail").html("Email không hợp lệ");
+                    $("#txtEmail").focus();
+                    return false;
+                } else {
+                    $("#errEmail").html("");
+                    return true;
+                }
+            }
+
             $("#txtEmail").blur(function () {
                 kiemtraemail();
             });
+
+
+
+            $("#txtThanhToan").click(function (e) {
+                if (!(kiemtrahoten() && kiemtraemail() && ktSDT() && ktDiaChi())) {
+                    alert("Vui lòng kiểm tra lại thông tin nhập");
+                }
+                else {
+                    $('#modalID').modal('show');
+                }
+            });
+
         });
-
-
-
-        // Xử lý sự kiện khi nút "Đặt hàng" được nhấn
-
-        /* function validateForm() {
-             return kiemtrahoten() && kiemtraemail() && ktSDT() && ktDiaChi() && ktHoTen();
-         } 
-         function register() {
-             if (!validateForm()) {
-                 e.preventDefault();
-                 alert("Vui lòng kiểm tra lại thông tin nhập");
-             }
-         }; 
-         */
     </script>
 </head>
 
@@ -129,8 +126,6 @@
         <div class="col-6"></div>
     </div>
     <div class="container">
-
-        <!-- CHI TIẾT ĐƠN HÀNG -->
         <div class="row">
             <div class="col-12">
                 <h1 class="tieude">CHI TIẾT ĐƠN HÀNG</h1>
@@ -168,8 +163,6 @@
             </div>
 
         </div>
-
-        <!-- Bảng THÔNG TIN KHÁCH HÀNG -->
         <div class="row">
             <div class="col-12">
                 <h1 class="tieude">THÔNG TIN NHẬN HÀNG</h1>
@@ -181,7 +174,7 @@
                     <div class="row form-group">
                         <div class="col-6">
                             <label for="">Họ tên:</label>
-                            <input type="text" id="txtHoTen" class="form-control" onblur="ktHoTen()">
+                            <input type="text" id="txtHoTen" class="form-control">
                             <span id="errHoTen" class="err">(*)</span>
                         </div>
                         <div class="col-6">
@@ -194,14 +187,14 @@
                     <div class="row form-group">
                         <div class="col-12">
                             <label for="">Địa Chỉ:</label>
-                            <input type="text" class="form-control" id="txtDiaChi" onblur="ktDiaChi()">
+                            <input type="text" class="form-control" id="txtDiaChi">
                             <span class="err" id="errDiaChi">(*)</span>
                         </div>
                     </div>
                     <div class="row form-group">
                         <div class="col-12">
                             <label for="">Số điện thoại:</label>
-                            <input type="text" class="form-control" id="txtSĐT" onblur="ktSDT()">
+                            <input type="text" class="form-control" id="txtSĐT">
                             <span class="err" id="errSĐT">(*)</span>
                         </div>
                     </div>
@@ -212,7 +205,8 @@
 
                 <p>Tổng tiền: <b>100.000 VNĐ</b></p>
                 <h5>PHƯƠNG THỨC THANH TOÁN</h5>
-                <input type="radio" name="thanhtoan" id=""> <i class="fa-solid fa-hand-holding-dollar"></i> &nbsp;Thanh
+                <input type="radio" name="thanhtoan" id="" checked> <i class="fa-solid fa-hand-holding-dollar"></i>
+                &nbsp;Thanh
                 toán khi nhận hàng <br>
                 <input type="radio" name="thanhtoan" id=""> <i class="fa-solid fa-money-check"></i> &nbsp; Ví MoMo <br>
                 <input type="radio" name="thanhtoan" id=""> <i class="fa-solid fa-building-columns"></i> &nbsp; Thẻ Tín
@@ -221,21 +215,18 @@
 
             </div>
         </div>
-        <!-- THANH TOÁN -->
         <div class="row">
             <div class="col-8"></div>
             <div class="col-2">
-                <button id="txtThanhToan" class="btn btn-success" onclick="register()" data-bs-toggle="modal"
-                    data-bs-target="#modalID" type="submit">THANH TOÁN</button>
+                <button id="txtThanhToan" class="btn btn-success" data-bs-toggle="modal" data-bs-target=""
+                    type="submit">THANH TOÁN</button>
             </div>
             <div class="col-2">
                 <a href="../html/index.html"><button class="btn btn-primary">Quay Lại</button></a>
             </div>
         </div>
 
-
-        <!-- PHẦN MODAL -->
-        <div class="modal made" id="modalID" onabort="modal()">
+        <div class="modal made" id="modalID">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="close">
@@ -261,7 +252,9 @@
     </div>
 
 
+    <script>
 
+    </script>
 </body>
 
 </html>

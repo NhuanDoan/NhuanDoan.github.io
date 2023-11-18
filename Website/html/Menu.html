@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/Menu.css">
     <link rel="stylesheet" href="../fontawesome-free-6.4.2-web/css/all.min.css">
     <script src="../bootstrap-5.2.3-dist/js/bootstrap.bundle.js"></script>
+    <!-- <script src="../bootstrap-5.2.3-dist/js/bootstrap.min.js"></script> -->
 </head>
 
 <body>
@@ -23,9 +24,10 @@
                 <div class="col-md-4 col-sm-8 col-8 py-3">
                     <div class="input-group mb-3 ">
                         <input type="text" class="form-control" placeholder="Từ khóa tìm kiếm"
-                            aria-label="Từ khóa tìm kiếm" aria-describedby="basic-addon2">
-                        <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-magnifying-glass"></i>
-                        </span>
+                            aria-label="Từ khóa tìm kiếm" aria-describedby="basic-addon2" id="timkiem">
+                        <button class="input-group-text" id="basic-addon2" onclick="timkiemts()"><i
+                                class="fa-solid fa-magnifying-glass"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-8 col-8 py-3 px-0">
@@ -63,28 +65,16 @@
                 <div class="col-md-2 col-sm-4 col-4 py-3">
                     <div class="row">
                         <div class="col-md-6 col-6">
-                            <a href="#" class=" position-relative">
-                                <span class="fs-5">
-                                    <i class="fa-regular fa-heart"></i>
-                                </span>
-                                <span
-                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                    0
-                                    <span class="visually-hidden">unread messages</span>
-                                </span>
+                            <a href="#" class="fs-2 position-relative">
+                                <i class="fa-regular fa-heart"></i>
                             </a>
                         </div>
                         <div class="col-md-6 col-6">
-                            <a href="#" class=" position-relative">
-                                <span class="fs-5">
-                                    <i class="fa-solid fa-bag-shopping"></i>
-                                </span>
-                                <span
-                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                    0
-                                    <span class="visually-hidden">unread messages</span>
-                                </span>
+                            <a href="#" class="fs-2 position-relative" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#" id="giohang" onclick="ttgiohang()">
+                                <i class="fa-solid fa-bag-shopping"></i>
                             </a>
+
                         </div>
                     </div>
                 </div>
@@ -457,6 +447,83 @@
             </div>
         </div>
     </div>
+
+
+
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Giỏ hàng</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Sản phẩm</th>
+                            <th>Đơn giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="fs-5 my-3">Trà sữa hoàng kim</p>
+                            </td>
+                            <td>
+                                <p class="my-3 gia">50.000 VNĐ</p>
+                            </td>
+                            <td>
+                                <input type="number" name="" class="my-3 soluong" value="1"
+                                    onblur="calculateTotal(this)">
+                            </td>
+                            <td>
+                                <p class="my-3 thanhtien"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="fs-5 my-3">Trà sữa sương sáo</p>
+                            </td>
+                            <td>
+                                <p class="my-3 gia">45.000 VNĐ</p>
+                            </td>
+                            <td>
+                                <input type="number" name="" class="my-3 soluong" value="1"
+                                    onblur="calculateTotal(this)">
+                            </td>
+                            <td>
+                                <p class="my-3 thanhtien"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="fs-5 my-3">Tiramisu</p>
+                            </td>
+                            <td>
+                                <p class="my-3 gia">30.000 VNĐ</p>
+                            </td>
+                            <td>
+                                <input type="number" name="" class="my-3 soluong" value="1"
+                                    onblur="calculateTotal(this)">
+                            </td>
+                            <td>
+                                <p class="my-3 thanhtien"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="h5">Tổng thanh toán</td>
+                            <td id="totalAmount"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="button" onclick="dathang()">Đặt
+                        hàng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         const name = localStorage.getItem("NameTT");
 
@@ -469,7 +536,71 @@
             document.getElementById("Dangnhap").textContent = firstName;
             const taikhoan = document.querySelector("#taikhoan");
             taikhoan.href = "thongtin.html";
+            var cart = document.querySelector('#giohang');
+            cart.setAttribute('data-bs-target', '#cartModal');
 
+        }
+
+        function calculateTotal(input) {
+            var giaElement = input.parentElement.previousElementSibling.querySelector(".gia");
+            var thanhtienElement = input.parentElement.nextElementSibling.querySelector(".thanhtien");
+            var gia = parseFloat(giaElement.textContent.replace(/[^\d]/g, ''));
+            var soluong = input.value;
+            var thanhtienValue = gia * soluong;
+            var thanhtienFormatted = thanhtienValue.toLocaleString();
+            thanhtienElement.textContent = thanhtienFormatted + " VNĐ";
+            var totalAmount = calculateTotalAmount();
+            document.getElementById("totalAmount").textContent = totalAmount.toLocaleString() + " VNĐ";
+        }
+
+        function calculateTotalAmount() {
+            var totalAmount = 0;
+
+
+            document.querySelectorAll(".soluong").forEach(function (input) {
+                var giaElement = input.parentElement.previousElementSibling.querySelector(".gia");
+                var soluong = input.value;
+                var gia = parseFloat(giaElement.textContent.replace(/[^\d]/g, ''));
+                var subtotal = gia * soluong;
+                totalAmount += subtotal;
+            });
+
+            return totalAmount;
+        }
+
+        document.querySelectorAll(".soluong").forEach(function (input) {
+            calculateTotal(input);
+        });
+
+        document.querySelectorAll(".soluong").forEach(function (input) {
+            input.addEventListener("input", function () {
+                calculateTotal(input);
+            });
+        });
+
+        function dathang() {
+            window.location.href = "thanhtoan.html";
+        }
+
+        function ttgiohang() {
+            var cart = document.querySelector('#giohang');
+            ttgh = cart.getAttribute('data-bs-target');
+            if (ttgh == "#") {
+                alert("Vui lòng đăng nhập để sử dụng tính năng!!!");
+            }
+        }
+
+        function timkiemts() {
+            var tukhoa = document.getElementById("timkiem");
+            var searchTerm = tukhoa.value.trim().toLowerCase();
+            var h5Elements = document.getElementsByClassName('h5');
+            for (var i = 0; i < h5Elements.length; i++) {
+                var h5Content = h5Elements[i].textContent.trim().toLowerCase();
+                if (h5Content.includes(searchTerm)) {
+                    h5Elements[i].scrollIntoView({ behavior: 'smooth',block: 'start' });
+                    break;
+                }
+            }
         }
     </script>
 </body>
